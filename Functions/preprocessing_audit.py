@@ -12,3 +12,11 @@ def print_datatype(datatype, df):
     tempdf = pd.DataFrame({'Unique Values': x, 'qty': y, 'na': z}, index=[list])
     print("\nData Frame 'Matches' contains following columns of", datatype, "data")
     return tempdf.sort_values('qty')
+
+def label(data):
+    if data["home_team_goal"] > data["away_team_goal"]:
+        return data["Home_team_name"]
+    elif data["away_team_goal"] > data["home_team_goal"]:
+        return data["Away_team_name"]
+    elif data["home_team_goal"] == data["away_team_goal"]:
+        return "EMPATE"
